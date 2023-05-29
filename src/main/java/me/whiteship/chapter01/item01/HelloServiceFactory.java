@@ -9,6 +9,7 @@ import java.util.ServiceLoader;
 
 public class HelloServiceFactory {
 
+    // 서비스 접근 api
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         ServiceLoader<HelloService> loader = ServiceLoader.load(HelloService.class);
         Optional<HelloService> helloServiceOptional = loader.findFirst();
@@ -20,7 +21,7 @@ public class HelloServiceFactory {
         System.out.println(helloService.hello());
 
 //        Class<?> aClass = Class.forName("me.whiteship.hello.ChineseHelloService");
-//        Constructor<?> constructor = aClass.getConstructor();
+//        Constructor<?> constructor = aClass.getConstructor(); // 생성자를 먼저 가져와서 인스턴스 생성
 //        HelloService helloService = (HelloService) constructor.newInstance();
 //        System.out.println(helloService.hello());
     }

@@ -30,9 +30,12 @@ public class Order {
     public static void main(String[] args) {
 
         Order order = new Order();
+//        order.orderStatus = OrderStatus.DELIVERED;
         if (order.orderStatus == OrderStatus.DELIVERED) {
             System.out.println("delivered");
         }
+
+        Arrays.stream(OrderStatus.values()).forEach(System.out::println);
     }
 
 }
