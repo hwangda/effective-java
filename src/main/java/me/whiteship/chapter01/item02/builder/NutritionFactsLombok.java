@@ -6,6 +6,7 @@ import lombok.Builder;
 
 // 코드 2-3 빌더 패턴 - 점층적 생성자 패턴과 자바빈즈 패턴의 장점만 취했다. (17~18쪽)
 @Builder
+//@Builder(builderClassName = "Builder") // 빌더 이름 지정 가능 -> new Builder()...
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class NutritionFactsLombok {
     public final int servingSize;
