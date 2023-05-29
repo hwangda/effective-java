@@ -16,6 +16,10 @@ public abstract class Pizza {
     abstract static class Builder<T extends Builder<T>> {
         EnumSet<Topping> toppings = EnumSet.noneOf(Topping.class);
         public T addTopping(Topping topping) {
+            // 리턴을 Builder 타입으로 해버리면 return this;로 변경필요 및
+            // 피자 생성 시, 아래처럼 타입 캐스팅 필요
+            // NyPizza pizza = (NyPizza) new NyPizza.Builder(SMALL)....build()
+            // 따라서 리턴을 T로 해서 하위 클래스 반환이 가능하도록 변경
             toppings.add(Objects.requireNonNull(topping));
             return self();
         }
